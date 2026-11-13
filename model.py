@@ -114,8 +114,15 @@ def four_in_a_row_diagonal_down_right(board):
             j += 1
     return 0
 
-# Step 9 - four_in_a_row_diagonal_up_right (not yet solved)
-# TODO: implement
+# Step 9 - four_in_a_row_diagonal_up_right
+import numpy as np
+def four_in_a_row_diagonal_up_right(board):
+    # TODO: scan every up-right diagonal for four consecutive matching non-zero pieces
+    mirrored_board = list([])
+    for i in range(6):
+        mirrored_board.append(board[i,:][::-1])
+    mirrored_board = np.array(mirrored_board)
+    return four_in_a_row_diagonal_down_right(mirrored_board)
 
 # Step 10 - check_winner (not yet solved)
 # TODO: implement
