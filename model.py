@@ -91,8 +91,28 @@ def four_in_a_row_vertical(board):
                 counter = 0
     return 0
 
-# Step 8 - four_in_a_row_diagonal_down_right (not yet solved)
-# TODO: implement
+# Step 8 - four_in_a_row_diagonal_down_right
+def four_in_a_row_diagonal_down_right(board):
+    # TODO: scan every down-right diagonal of the 6x7 board for four matching non-zero pieces
+    for start_x in range(-2,7):
+        counter = 0
+        if start_x<0:
+            i = -start_x
+            j = 0
+        else:
+            i = 0
+            j = start_x
+        while i<= 4 and j <= 5:
+            if board[i,j] == board[i+1, j+1] and board[i,j] != 0:
+                if counter == 2:
+                    return board[i,j]
+                else:
+                    counter += 1
+            else:
+                 counter = 0
+            i += 1
+            j += 1
+    return 0
 
 # Step 9 - four_in_a_row_diagonal_up_right (not yet solved)
 # TODO: implement
