@@ -124,8 +124,25 @@ def four_in_a_row_diagonal_up_right(board):
     mirrored_board = np.array(mirrored_board)
     return four_in_a_row_diagonal_down_right(mirrored_board)
 
-# Step 10 - check_winner (not yet solved)
-# TODO: implement
+# Step 10 - check_winner
+import numpy as np
+
+def check_winner(board):
+    """Return 1 or 2 if that player has four in a row, else 0."""
+    # TODO: combine the four direction scans and return the first non-zero result
+    horiz = four_in_a_row_horizontal(board)
+    if horiz != 0:
+        return horiz
+    vert = four_in_a_row_vertical(board)
+    if vert != 0:
+        return vert
+    diag1 = four_in_a_row_diagonal_down_right(board)
+    if diag1 != 0:
+        return diag1
+    diag2 = four_in_a_row_diagonal_up_right(board)
+    if diag2 != 0:
+        return diag2
+    return 0
 
 # Step 11 - board_is_full (not yet solved)
 # TODO: implement
